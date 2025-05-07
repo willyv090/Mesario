@@ -1,0 +1,54 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del corazón */
+.heart-container {
+    position: relative;
+    width: 500px;  /* Ajustamos el tamaño del contenedor */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animación para dibujar el corazón */
+.heart path {
+    stroke-dasharray: 2000; /* Ajusta la longitud total del trazo */
+    stroke-dashoffset: 2000; /* Empieza sin mostrar */
+    animation: drawHeart 5s ease forwards; /* Animación de 5 segundos */
+}
+
+/* Animación para el trazo del corazón */
+@keyframes drawHeart {
+    0% {
+        stroke-dashoffset: 2000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Animación del nombre escrito */
+.name-svg path {
+    stroke-dasharray: 200; /* Longitud de la línea a dibujar */
+    stroke-dashoffset: 200; /* Comienza sin mostrar */
+    animation: drawName 4s ease 1s forwards; /* La animación comienza después de 1 segundo */
+}
+
+/* Animación para el trazo del nombre */
+@keyframes drawName {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
